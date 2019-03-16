@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.TestTools;
 
@@ -12,7 +13,8 @@ namespace Tests
         [Test]
         public void TestTrueSimplePasses()
         {
-            Assert.IsTrue(true);
+            EditorSceneManager.LoadScene(0);
+            Assert.IsTrue(GameObject.Find("Test") != null);
         }
 
         // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use

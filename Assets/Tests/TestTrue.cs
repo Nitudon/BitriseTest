@@ -13,18 +13,8 @@ namespace Tests
         [Test]
         public void TestTrueSimplePasses()
         {
-            EditorSceneManager.LoadScene(0);
+            EditorSceneManager.OpenScene("Assets/Scenes/BuildTest.unity");
             Assert.IsTrue(GameObject.Find("Test") != null);
-        }
-
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
-        [UnityTest]
-        public IEnumerator TestTrueWithEnumeratorPasses()
-        {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-            yield return null;
         }
     }
 }
